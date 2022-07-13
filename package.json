@@ -1,0 +1,11 @@
+{
+  "name": "jsybuben",
+  "version": "0.0.1",
+  "description": "A tool for writing text in Armenian alphabet(aybuben). ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ohmin839",
+  "license": "ISC"
+}
