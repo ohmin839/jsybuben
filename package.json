@@ -2,10 +2,16 @@
   "name": "jsybuben",
   "version": "0.0.1",
   "description": "A tool for writing text in Armenian alphabet(aybuben). ",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "ohmin839",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "pegjs": "^0.10.0"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
 }
