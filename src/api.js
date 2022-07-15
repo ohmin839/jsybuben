@@ -1,5 +1,5 @@
-var jsybuben = {
+var api = {
     to_aybuben: require("./converter").parse
 };
 
-module.exports = jsybuben;
+module.exports = api;

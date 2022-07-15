@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="./jsybuben.js"></script>
+<script>
+    function to_aybuben() {
+        sourceText = document.getElementById("sourceTextArea").value;
+        convertedText = jsybuben.to_aybuben(sourceText);
+        document.getElementById("targetTextArea").value = convertedText;
+    }
+</script>
+<table>
+    <tr>
+        <td><textarea id="sourceTextArea"></textarea></td>
+        <td><button id="conversionButton" onclick="to_aybuben()">&gt;&gt;</button></td>
+        <td><textarea id="targetTextArea"></textarea></td>
+    </tr>
+</table>
+</table>
+</body>
+</html>

@@ -1,5 +1,5 @@
-const jsybuben = require("./index");
-const to_aybuben = jsybuben.to_aybuben;
+const api = require("./api");
+const to_aybuben = api.to_aybuben;
 
 test.each([
     ["", ""],
