@@ -5,7 +5,8 @@
   "main": "src/api.js",
   "scripts": {
     "test": "jest",
-    "pegjs": "npx pegjs -o src/converter.js peg/converter.pegjs",
+    "genconv": "npx pegjs -o src/converter.js peg/converter.pegjs",
+    "gencoll": "npx pegjs -o src/collector.js peg/collector.pegjs",
     "browserify": "npx browserify -o client/jsybuben.js -s jsybuben src/api.js"
   },
   "author": "ohmin839",

@@ -105,6 +105,5 @@ test.each([
     ["\r\n", "\r\n"],
     ["あ", "あ"],
 ])("from %s to %s", (ascii, unicode) => {
-    expect(to_aybuben(ascii)).toBe(unicode);
+    expect(to_aybuben(ascii)).toStrictEqual(unicode);
 });
-
