@@ -4,10 +4,12 @@
   "description": "A tool for writing text in Armenian alphabet(aybuben) ",
   "main": "src/api.js",
   "scripts": {
-    "test": "jest",
     "genconv": "npx pegjs -o src/converter.js peg/converter.pegjs",
     "gencoll": "npx pegjs -o src/collector.js peg/collector.pegjs",
-    "browserify": "npx browserify -o client/jsybuben.js -s jsybuben src/api.js"
+    "pretest": "npm run genconv && npm run gencoll",
+    "test": "jest",
+    "browserify": "npx browserify -o client/jsybuben.js -s jsybuben src/api.js",
+    "posttest": "npm run browserify"
   },
   "author": "ohmin839",
   "license": "ISC",
