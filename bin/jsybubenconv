@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+"use strict";
+
+var jsybuben = require("../src/api");
+
+var readline = require("readline");
+var rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    terminal: false
+});
+
+rl.on("line", function(line) {
+    var converted = jsybuben.to_aybuben(line);
+    console.log(converted);
+})
