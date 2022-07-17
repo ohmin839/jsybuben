@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+"use strict";
+
+var jsybuben = require("../src/api");
+
+var readline = require("readline");
+var rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    terminal: false
+});
+
+var word_set = new Set();
+rl.on("line", function(line) {
+    var split = jsybuben.to_hayeren_words(line);
+    for (let w of split) {
+        word_set.add(w);
+    }
+});
+
+rl.on("close", function() {
+    for (let w of word_set) {
+        console.log(w);
+    }
+});
