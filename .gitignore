@@ -133,3 +133,4 @@ dist
 src-client/lib/dojo
 src-client/lib/dojox
 src-client/lib/dijit
+src-client/lib/leaflet

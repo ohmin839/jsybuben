@@ -2,6 +2,7 @@ dojoConfig = {
     async: true,
     baseUrl: "lib",
     paths: {
-        jsybuben: "jsybuben"
+        jsybuben: "jsybuben",
+        leaflet: "leaflet"
     }
 }

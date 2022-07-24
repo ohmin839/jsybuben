@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Hello Leaflet</title>
+        <script src="./dojoConfig.js"></script>
+        <script src="./lib/dojo/dojo.js"></script>
+        <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
+        <style>
+            #mapdiv {
+                height:100vh;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mapdiv"></div>
+        <script>
+            require([
+                "dojo/dom",
+                "leaflet/leaflet",
+                "dojo/domReady!"
+            ], function(dom, L) {
+                // Yerevan
+                var mymap = L.map('mapdiv', {center:[40.159167,44.509167], zoom: 13});
+                var lyrOSM = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
+                mymap.addLayer(lyrOSM);
+            })
+        </script>
+    </body>
+</html>
