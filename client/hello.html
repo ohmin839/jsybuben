@@ -9,10 +9,13 @@
         <script>
             require([
                 "dojo/dom",
+                "dojo/query",
                 "dojo/domReady!"
-            ], function(dom) {
-                var i = dom.byId("hello");
-                console.log(i.innerHTML);
+            ], function(dom, query) {
+                var i1 = dom.byId("hello");
+                var i2 = query("#hello")[0];
+                console.log(i1.innerHTML);
+                console.log(i2.innerHTML);
             });
         </script>
         <h1 id="hello">Hello Dojo!</h1>
