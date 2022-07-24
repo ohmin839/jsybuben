@@ -7,7 +7,7 @@
     "genconv": "npx pegjs -o src/converter.js peg/converter.pegjs",
     "gencoll": "npx pegjs -o src/collector.js peg/collector.pegjs",
     "pretest": "npm run genconv && npm run gencoll",
-    "test": "jest",
+    "test": "jest --verbose tests",
     "browserify": "npx browserify -o src-client/lib/jsybuben/jsybuben.js -s jsybuben src/api.js",
     "posttest": "npm run browserify"
   },
