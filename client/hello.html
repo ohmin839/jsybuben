@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Hello Dojo</title>
+    </head>
+    <body>
+        <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js" data-dojo-config="async: true"></script>
+        <script>
+            require([
+                "dojo/dom",
+                "dojo/domReady!"
+            ], function(dom) {
+                var i = dom.byId("hello");
+                console.log(i.innerHTML);
+            });
+        </script>
+        <h1 id="hello">Hello Dojo!</h1>
+    </body>
+</html>
