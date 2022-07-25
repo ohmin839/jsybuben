@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html>
-<body>
-<script src="./lib/jsybuben/jsybuben.js"></script>
-<script>
-    function to_aybuben() {
-        sourceText = document.getElementById("sourceTextArea").value;
-        convertedText = jsybuben.to_aybuben(sourceText);
-        document.getElementById("targetTextArea").value = convertedText;
-    }
-</script>
-<table>
-    <tr>
-        <td><textarea id="sourceTextArea"></textarea></td>
-        <td><button id="conversionButton" onclick="to_aybuben()">&gt;&gt;</button></td>
-        <td><textarea id="targetTextArea"></textarea></td>
-    </tr>
-</table>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>jsybuben</title>
+        <script src="./dojoConfig.js"></script>
+        <script src="./lib/dojo/dojo.js"></script>
+        <script>
+            require([
+                "dojo/dom",
+                "dojo/on",
+                "jsybuben/jsybuben",
+                "dojo/domReady!"
+            ], function(dom, on, jsybuben) {
+                var sourceTextArea = dom.byId("sourceTextArea");
+                var conversionButton = dom.byId("conversionButton");
+                var targetTextArea = dom.byId("targetTextArea");
+                on(conversionButton, "click", function(e) {
+                    var sourceText = sourceTextArea.value;
+                    var convertedText = jsybuben.to_aybuben(sourceText);
+                    targetTextArea.value = convertedText;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="conversionArea">
+            <table>
+                <tr>
+                    <td><textarea id="sourceTextArea"></textarea></td>
+                    <td><button id="conversionButton">&gt;&gt;</button></td>
+                    <td><textarea id="targetTextArea"></textarea></td>
+                </tr>
+            </table>
+        </div>
+    </body>
 </html>
