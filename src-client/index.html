@@ -3,6 +3,15 @@
     <head>
         <meta charset="UTF-8" />
         <title>jsybuben</title>
+        <link rel="stylesheet" href="./lib/leaflet/leaflet.css" />
+        <style>
+            #mapArea {
+                height:512px;
+                width:512px;
+            }
+        </style>
+    </head>
+    <body>
         <script src="./dojoConfig.js"></script>
         <script src="./lib/dojo/dojo.js"></script>
         <script>
@@ -10,8 +19,10 @@
                 "dojo/dom",
                 "dojo/on",
                 "jsybuben/jsybuben",
+                "leaflet/leaflet",
                 "dojo/domReady!"
-            ], function(dom, on, jsybuben) {
+            ], function(dom, on, jsybuben, leaflet) {
+                // jsybuben
                 var sourceTextArea = dom.byId("sourceTextArea");
                 var conversionButton = dom.byId("conversionButton");
                 var targetTextArea = dom.byId("targetTextArea");
@@ -20,10 +31,12 @@
                     var convertedText = jsybuben.to_aybuben(sourceText);
                     targetTextArea.value = convertedText;
                 });
+                // leaflet
+                var mymap = leaflet.map('mapArea', {center:[40.159167,44.509167], zoom: 10});
+                var lyrOSM = leaflet.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
+                mymap.addLayer(lyrOSM);
             });
         </script>
-    </head>
-    <body>
         <div id="conversionArea">
             <table>
                 <tr>
@@ -33,5 +46,6 @@
                 </tr>
             </table>
         </div>
+        <div id="mapArea"></div>
     </body>
 </html>
