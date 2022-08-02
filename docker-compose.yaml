@@ -1,0 +1,8 @@
+version: "1"
+services:
+  node:
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    volumes:
+      - .:/jsybuben:rw
