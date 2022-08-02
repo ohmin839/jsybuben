@@ -1,4 +1,4 @@
-const api = require("../src/api");
+const api = require("../src/core/api");
 const to_hayeren_words = api.to_hayeren_words;
 
 test.each([

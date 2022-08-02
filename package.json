@@ -2,13 +2,13 @@
   "name": "jsybuben",
   "version": "0.1.0",
   "description": "A tool for writing text in Armenian alphabet(aybuben) ",
-  "main": "src/api.js",
+  "main": "src/core/api.js",
   "scripts": {
-    "genconv": "npx pegjs -o src/converter.js peg/converter.pegjs",
-    "gencoll": "npx pegjs -o src/collector.js peg/collector.pegjs",
+    "genconv": "pegjs -o src/core/converter.js src/peg/converter.pegjs",
+    "gencoll": "pegjs -o src/core/collector.js src/peg/collector.pegjs",
     "pretest": "npm run genconv && npm run gencoll",
-    "test": "jest --verbose tests",
-    "browserify": "npx browserify -o src-client/lib/jsybuben/jsybuben.js -s jsybuben src/api.js",
+    "test": "jest --verbose test",
+    "browserify": "browserify -o src/client/lib/jsybuben/jsybuben.js -s jsybuben src/core/api.js",
     "posttest": "npm run browserify"
   },
   "author": "ohmin839",

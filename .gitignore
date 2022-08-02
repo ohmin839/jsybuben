@@ -130,7 +130,7 @@ dist
 .pnp.*
 
 # additional
-src-client/lib/dojo
-src-client/lib/dojox
-src-client/lib/dijit
-src-client/lib/leaflet
+src/client/lib/dojo/
+src/client/lib/dojox/
+src/client/lib/dijit/
+src/client/lib/leaflet/
