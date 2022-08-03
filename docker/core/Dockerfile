@@ -1,8 +1,25 @@
-FROM node:16.16.0
+FROM ubuntu:focal
+
+RUN apt-get update && \
+    apt-get install -qy build-essential curl
+
+ARG UID=1000
+ARG GID=1000
+ARG USERNAME=user
+ARG HOME=/home/$USERNAME
+RUN groupadd -g $GID $USERNAME && \
+    useradd -m -s /bin/bash -u $UID -g $GID $USERNAME
+
+RUN cd /tmp && \
+    # node v16.16.0
+    curl -sfSL -R -O https://nodejs.org/dist/v16.16.0/node-v16.16.0-linux-x64.tar.xz && \
+    tar Jxf node-v16.16.0-linux-x64.tar.xz && \
+    cd node-v16.16.0-linux-x64 && \
+    cp -pR bin include lib share /usr/local
 
 COPY ./docker/core/entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 CMD ["/entrypoint.sh"]
 
-USER node
+USER $USERNAME
 WORKDIR /jsybuben
