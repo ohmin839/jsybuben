@@ -8,15 +8,21 @@
     "gencoll": "pegjs -o src/core/collector.js src/peg/collector.pegjs",
     "pretest": "npm run genconv && npm run gencoll",
     "test": "jest --verbose test",
+    "prebrowserify": "test -d src/client/lib/jsybuben || mkdir -p src/client/lib/jsybuben",
     "browserify": "browserify -o src/client/lib/jsybuben/jsybuben.js -s jsybuben src/core/api.js",
     "posttest": "npm run browserify"
   },
   "author": "ohmin839",
   "license": "ISC",
   "dependencies": {
+    "dijit": "^1.17.2",
+    "dojo": "^1.17.2",
+    "dojox": "^1.17.2",
+    "leaflet": "^1.8.0"
   },
   "devDependencies": {
     "browserify": "^17.0.0",
+    "gulp": "^4.0.2",
     "jest": "^28.1.3",
     "pegjs": "^0.10.0"
   }
