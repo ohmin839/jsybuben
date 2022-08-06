@@ -8,8 +8,8 @@
     "gencoll": "pegjs -o src/core/collector.js src/peg/collector.pegjs",
     "pretest": "npm run genconv & npm run gencoll",
     "test": "jest --verbose test",
-    "prebrowserify": "test -d src/client/lib/jsybuben || mkdir -p src/client/lib/jsybuben",
-    "browserify": "browserify -o src/client/lib/jsybuben/jsybuben.js -s jsybuben src/core/api.js",
+    "prebrowserify": "test -d dist || mkdir -p dist/client/lib/jsybuben",
+    "browserify": "browserify -o dist/lib/client/jsybuben/jsybuben.js -s jsybuben src/core/api.js",
     "posttest": "npm run browserify"
   },
   "author": "ohmin839",
