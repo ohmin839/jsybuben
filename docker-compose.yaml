@@ -6,3 +6,10 @@ services:
       dockerfile: ./docker/core/Dockerfile
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
+  client:
+    build:
+      context: .
+      dockerfile: ./docker/client/Dockerfile
+    volumes:
+      - ./jsybuben-core:/jsybuben-core:rw
+      - ./jsybuben-client:/jsybuben-client:rw
