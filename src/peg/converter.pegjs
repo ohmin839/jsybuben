@@ -83,7 +83,7 @@ largeB = "B" {
 }
 
 largeC = "C" suffix :[h']? {
-    switch (suffix ) {
+    switch (suffix) {
         case "h":
             return "\u0549";
         case "'":
@@ -94,7 +94,7 @@ largeC = "C" suffix :[h']? {
 }
 
 largeD = "D" suffix :"z"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "z":
             return "\u0541";
         default:
@@ -103,7 +103,7 @@ largeD = "D" suffix :"z"? {
 }
 
 largeE = "E" suffix :"'"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "'":
             return "\u0537";
         default:
@@ -116,7 +116,7 @@ largeF = "F" {
 }
 
 largeG = "G" suffix :"h"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "h":
             return "\u0542";
         default:
@@ -157,7 +157,7 @@ largeO = "O" {
 }
 
 largeP = "P" suffix :"'"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "'":
             return "\u0553";
         default:
@@ -170,7 +170,7 @@ largeQ = "Q" {
 }
 
 largeR = "R" suffix :"r"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "r":
             return "\u054C";
         default:
@@ -179,7 +179,7 @@ largeR = "R" suffix :"r"? {
 }
 
 largeS = "S" suffix :"h"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "h":
             return "\u0547";
         default:
@@ -188,7 +188,7 @@ largeS = "S" suffix :"h"? {
 }
 
 largeT = "T" suffix :[w']? {
-    switch (suffix ) {
+    switch (suffix) {
         case "w":
             return "\u0543";
         case "'":
@@ -203,7 +203,7 @@ largeU = "U" {
 }
 
 largeV = "V" suffix :"o"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "o":
             return "\u0548";
         default:
@@ -220,7 +220,7 @@ largeX = "X" {
 }
 
 largeY = "Y" suffix :"'"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "'":
             return "\u0538";
         default:
@@ -229,7 +229,7 @@ largeY = "Y" suffix :"'"? {
 }
 
 largeZ = "Z" suffix :"h"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "h":
             return "\u053A";
         default:
@@ -249,7 +249,7 @@ smallB = "b" {
 
 smallC = "c" suffix :[h']? {
 
-    switch (suffix ) {
+    switch (suffix) {
         case "h":
             return "\u0579";
         case "'":
@@ -260,7 +260,7 @@ smallC = "c" suffix :[h']? {
 }
 
 smallD = "d" suffix :"z"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "z":
             return "\u0571";
         default:
@@ -269,7 +269,7 @@ smallD = "d" suffix :"z"? {
 }
 
 smallE = "e" suffix :[v']? {
-    switch (suffix ) {
+    switch (suffix) {
         case "v":
             return "\u0587";
         case "'":
@@ -284,7 +284,7 @@ smallF = "f" {
 }
 
 smallG = "g" suffix :"h"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "h":
             return "\u0572";
         default:
@@ -325,7 +325,7 @@ smallO = "o" {
 }
 
 smallP = "p" suffix :"'"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "'":
             return "\u0583";
         default:
@@ -338,7 +338,7 @@ smallQ = "q" {
 }
 
 smallR = "r" suffix :"r"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "r":
             return "\u057C";
         default:
@@ -347,7 +347,7 @@ smallR = "r" suffix :"r"? {
 }
 
 smallS = "s" suffix :"h"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "h":
             return "\u0577";
         default:
@@ -356,7 +356,7 @@ smallS = "s" suffix :"h"? {
 }
 
 smallT = "t" suffix :[w']? {
-    switch (suffix ) {
+    switch (suffix) {
         case "w":
             return "\u0573";
         case "'":
@@ -371,7 +371,7 @@ smallU = "u" {
 }
 
 smallV = "v" suffix :"o"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "o":
             return "\u0578";
         default:
@@ -388,7 +388,7 @@ smallX = "x" {
 }
 
 smallY = "y" suffix :"'"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "'":
             return "\u0568";
         default:
@@ -397,7 +397,7 @@ smallY = "y" suffix :"'"? {
 }
 
 smallZ = "z" suffix :"h"? {
-    switch (suffix ) {
+    switch (suffix) {
         case "h":
             return "\u056A";
         default:
@@ -477,4 +477,3 @@ newline = r: "\r"? n: "\n" {
 anychar = text: . {
     return text;
 }
-

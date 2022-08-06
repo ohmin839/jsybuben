@@ -1,4 +1,4 @@
-const api = require("../src/core/api");
+const api = require("../../src/core/api");
 const to_hayeren_words = api.to_hayeren_words;
 
 test.each([
@@ -7,4 +7,3 @@ test.each([
 ])("from %s to %s", (text, splitted) => {
     expect(to_hayeren_words(text)).toStrictEqual(splitted);
 });
-

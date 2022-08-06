@@ -159,7 +159,7 @@ function peg$parse(input, options) {
       peg$c9 = /^[h']/,
       peg$c10 = peg$classExpectation(["h", "'"], false, false),
       peg$c11 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "h":
                   return "\u0549";
               case "'":
@@ -173,7 +173,7 @@ function peg$parse(input, options) {
       peg$c14 = "z",
       peg$c15 = peg$literalExpectation("z", false),
       peg$c16 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "z":
                   return "\u0541";
               default:
@@ -185,7 +185,7 @@ function peg$parse(input, options) {
       peg$c19 = "'",
       peg$c20 = peg$literalExpectation("'", false),
       peg$c21 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "'":
                   return "\u0537";
               default:
@@ -202,7 +202,7 @@ function peg$parse(input, options) {
       peg$c27 = "h",
       peg$c28 = peg$literalExpectation("h", false),
       peg$c29 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "h":
                   return "\u0542";
               default:
@@ -252,7 +252,7 @@ function peg$parse(input, options) {
       peg$c54 = "P",
       peg$c55 = peg$literalExpectation("P", false),
       peg$c56 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "'":
                   return "\u0553";
               default:
@@ -269,7 +269,7 @@ function peg$parse(input, options) {
       peg$c62 = "r",
       peg$c63 = peg$literalExpectation("r", false),
       peg$c64 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "r":
                   return "\u054C";
               default:
@@ -279,7 +279,7 @@ function peg$parse(input, options) {
       peg$c65 = "S",
       peg$c66 = peg$literalExpectation("S", false),
       peg$c67 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "h":
                   return "\u0547";
               default:
@@ -291,7 +291,7 @@ function peg$parse(input, options) {
       peg$c70 = /^[w']/,
       peg$c71 = peg$classExpectation(["w", "'"], false, false),
       peg$c72 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "w":
                   return "\u0543";
               case "'":
@@ -310,7 +310,7 @@ function peg$parse(input, options) {
       peg$c78 = "o",
       peg$c79 = peg$literalExpectation("o", false),
       peg$c80 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "o":
                   return "\u0548";
               default:
@@ -330,7 +330,7 @@ function peg$parse(input, options) {
       peg$c87 = "Y",
       peg$c88 = peg$literalExpectation("Y", false),
       peg$c89 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "'":
                   return "\u0538";
               default:
@@ -340,7 +340,7 @@ function peg$parse(input, options) {
       peg$c90 = "Z",
       peg$c91 = peg$literalExpectation("Z", false),
       peg$c92 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "h":
                   return "\u053A";
               default:
@@ -361,7 +361,7 @@ function peg$parse(input, options) {
       peg$c100 = peg$literalExpectation("c", false),
       peg$c101 = function(suffix) {
 
-          switch (suffix ) {
+          switch (suffix) {
               case "h":
                   return "\u0579";
               case "'":
@@ -373,7 +373,7 @@ function peg$parse(input, options) {
       peg$c102 = "d",
       peg$c103 = peg$literalExpectation("d", false),
       peg$c104 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "z":
                   return "\u0571";
               default:
@@ -385,7 +385,7 @@ function peg$parse(input, options) {
       peg$c107 = /^[v']/,
       peg$c108 = peg$classExpectation(["v", "'"], false, false),
       peg$c109 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "v":
                   return "\u0587";
               case "'":
@@ -402,7 +402,7 @@ function peg$parse(input, options) {
       peg$c113 = "g",
       peg$c114 = peg$literalExpectation("g", false),
       peg$c115 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "h":
                   return "\u0572";
               default:
@@ -448,7 +448,7 @@ function peg$parse(input, options) {
       peg$c136 = "p",
       peg$c137 = peg$literalExpectation("p", false),
       peg$c138 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "'":
                   return "\u0583";
               default:
@@ -461,7 +461,7 @@ function peg$parse(input, options) {
           return "\u0584";
       },
       peg$c142 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "r":
                   return "\u057C";
               default:
@@ -471,7 +471,7 @@ function peg$parse(input, options) {
       peg$c143 = "s",
       peg$c144 = peg$literalExpectation("s", false),
       peg$c145 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "h":
                   return "\u0577";
               default:
@@ -481,7 +481,7 @@ function peg$parse(input, options) {
       peg$c146 = "t",
       peg$c147 = peg$literalExpectation("t", false),
       peg$c148 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "w":
                   return "\u0573";
               case "'":
@@ -498,7 +498,7 @@ function peg$parse(input, options) {
       peg$c152 = "v",
       peg$c153 = peg$literalExpectation("v", false),
       peg$c154 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "o":
                   return "\u0578";
               default:
@@ -518,7 +518,7 @@ function peg$parse(input, options) {
       peg$c161 = "y",
       peg$c162 = peg$literalExpectation("y", false),
       peg$c163 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "'":
                   return "\u0568";
               default:
@@ -526,7 +526,7 @@ function peg$parse(input, options) {
           }
       },
       peg$c164 = function(suffix) {
-          switch (suffix ) {
+          switch (suffix) {
               case "h":
                   return "\u056A";
               default:

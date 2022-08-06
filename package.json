@@ -6,7 +6,7 @@
   "scripts": {
     "genconv": "pegjs -o src/core/converter.js src/peg/converter.pegjs",
     "gencoll": "pegjs -o src/core/collector.js src/peg/collector.pegjs",
-    "pretest": "npm run genconv && npm run gencoll",
+    "pretest": "npm run genconv & npm run gencoll",
     "test": "jest --verbose test",
     "prebrowserify": "test -d src/client/lib/jsybuben || mkdir -p src/client/lib/jsybuben",
     "browserify": "browserify -o src/client/lib/jsybuben/jsybuben.js -s jsybuben src/core/api.js",

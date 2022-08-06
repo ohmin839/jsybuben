@@ -2,7 +2,7 @@
 
 "use strict";
 
-var jsybuben = require("../src/api");
+var jsybuben = require("../src/core/api");
 
 var readline = require("readline");
 var rl = readline.createInterface({
