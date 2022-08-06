@@ -5,4 +5,4 @@ services:
       context: .
       dockerfile: ./docker/core/Dockerfile
     volumes:
-      - .:/jsybuben:rw
+      - ./jsybuben-core:/jsybuben-core:rw

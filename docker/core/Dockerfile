@@ -22,4 +22,4 @@ RUN chmod +x /entrypoint.sh
 CMD ["/entrypoint.sh"]
 
 USER $USERNAME
-WORKDIR /jsybuben
+WORKDIR /jsybuben-core

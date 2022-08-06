@@ -1,0 +1,30 @@
+{
+  "name": "jsybuben-core",
+  "version": "0.1.0",
+  "description": "A tiny tool for editing text in Armenian alphabet(Aybuben) ",
+  "main": "lib/api.js",
+  "bin": {
+    "jsybubenconv": "bin/jsybubenconv",
+    "jsybubencoll": "bin/jsybubencoll"
+  },
+  "scripts": {
+    "genconv": "pegjs -o lib/converter.js peg/converter.pegjs",
+    "gencoll": "pegjs -o lib/collector.js peg/collector.pegjs",
+    "pretest": "npm run genconv & npm run gencoll",
+    "test": "jest --verbose test"
+  },
+  "author": "ohmin839",
+  "files": [
+    "bin/jsybubenconv",
+    "bin/jsybubencoll",
+    "lib/api.js",
+    "lib/converter.js",
+    "lib/collector.js",
+    "package.json"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.3",
+    "pegjs": "^0.10.0"
+  }
+}
