@@ -4,12 +4,16 @@ services:
     build:
       context: .
       dockerfile: ./docker/core/Dockerfile
+      args:
+        - ARCH=$ARCH
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
   client:
     build:
       context: .
       dockerfile: ./docker/client/Dockerfile
+      args:
+        - ARCH=$ARCH
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
       - ./jsybuben-client:/jsybuben-client:rw
@@ -17,6 +21,8 @@ services:
     build:
       context: .
       dockerfile: ./docker/rest/Dockerfile
+      args:
+        - ARCH=$ARCH
     ports:
       - 3000:3000
     volumes:

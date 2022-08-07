@@ -10,11 +10,12 @@ ARG HOME=/home/$USERNAME
 RUN groupadd -g $GID $USERNAME && \
     useradd -m -s /bin/bash -u $UID -g $GID $USERNAME
 
+ARG ARCH
 RUN cd /tmp && \
     # node v16.16.0
-    curl -sfSL -R -O https://nodejs.org/dist/v16.16.0/node-v16.16.0-linux-x64.tar.xz && \
-    tar Jxf node-v16.16.0-linux-x64.tar.xz && \
-    cd node-v16.16.0-linux-x64 && \
+    curl -sfSL -R -O "https://nodejs.org/dist/v16.16.0/node-v16.16.0-linux-$ARCH.tar.xz" && \
+    tar Jxf node-v16.16.0-linux-$ARCH.tar.xz && \
+    cd node-v16.16.0-linux-$ARCH && \
     cp -pR bin include lib share /usr/local
 
 COPY ./docker/client/entrypoint.sh /
