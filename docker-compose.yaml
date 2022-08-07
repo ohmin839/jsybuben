@@ -13,12 +13,12 @@ services:
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
       - ./jsybuben-client:/jsybuben-client:rw
-  server:
+  rest:
     build:
       context: .
-      dockerfile: ./docker/server/Dockerfile
+      dockerfile: ./docker/rest/Dockerfile
     ports:
       - 3000:3000
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
-      - ./jsybuben-server:/jsybuben-server:rw
+      - ./jsybuben-rest:/jsybuben-rest:rw
