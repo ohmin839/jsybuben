@@ -19,9 +19,9 @@ RUN cd /tmp && \
 
 EXPOSE 3000
 
-COPY ./docker/server/entrypoint.sh /
+COPY ./docker/rest/entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 CMD ["/entrypoint.sh"]
 
 USER $USERNAME
-WORKDIR /jsybuben-server
+WORKDIR /jsybuben-rest
