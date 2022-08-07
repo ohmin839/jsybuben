@@ -3,4 +3,4 @@
 
 - [`jsybuben-core`](./jsybuben-core/README.md)
 - `jsybuben-client`
-- `jsybuben-server`
+- `jsybuben-rest`
