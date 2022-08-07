@@ -1,7 +1,7 @@
 {
   "name": "jsybuben-client",
   "version": "0.1.0",
-  "description": "A tiny tool for writing text in Armenian alphabet(Aybuben) ",
+  "description": "A tiny tool for editing text in Armenian alphabet(Aybuben)",
   "author": "ohmin839",
   "license": "ISC",
   "dependencies": {
