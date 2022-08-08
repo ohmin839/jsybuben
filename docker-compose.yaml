@@ -8,15 +8,14 @@ services:
         - ARCH=$ARCH
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
-  client:
-    build:
-      context: .
-      dockerfile: ./docker/client/Dockerfile
-      args:
-        - ARCH=$ARCH
+  db:
+    image: postgres:14.4-alpine
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=passw0rd
     volumes:
-      - ./jsybuben-core:/jsybuben-core:rw
-      - ./jsybuben-client:/jsybuben-client:rw
+      - ./docker/db/initsql:/docker-entrypoint-initdb.d
   rest:
     build:
       context: .
@@ -24,7 +23,18 @@ services:
       args:
         - ARCH=$ARCH
     ports:
-      - 3000:3000
+      - 8888:8888
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
       - ./jsybuben-rest:/jsybuben-rest:rw
+  client:
+    build:
+      context: .
+      dockerfile: ./docker/client/Dockerfile
+      args:
+        - ARCH=$ARCH
+    ports:
+      - 3000:3000
+    volumes:
+      - ./jsybuben-core:/jsybuben-core:rw
+      - ./jsybuben-client:/jsybuben-client:rw

@@ -1,7 +1,7 @@
 const express = require('express')
 const jsybuben = require('jsybuben-core')
 const app = express()
-const port = 3000
+const port = 8888
 
 app.get('/', (req, res) => {
     res.send(jsybuben.to_aybuben('Barev Dzez:'))
