@@ -14,6 +14,8 @@ services:
       dockerfile: ./docker/client/Dockerfile
       args:
         - ARCH=$ARCH
+    ports:
+      - 3000:3000
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
       - ./jsybuben-client:/jsybuben-client:rw
