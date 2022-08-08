@@ -23,7 +23,7 @@ services:
       args:
         - ARCH=$ARCH
     ports:
-      - 3000:3000
+      - 8888:8888
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
       - ./jsybuben-rest:/jsybuben-rest:rw
@@ -33,8 +33,6 @@ services:
       dockerfile: ./docker/client/Dockerfile
       args:
         - ARCH=$ARCH
-#    depends_on:
-#      - rest
     ports:
       - 3000:3000
     volumes:

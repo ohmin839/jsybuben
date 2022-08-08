@@ -2,6 +2,7 @@ const { dest, src, series } = require('gulp');
 const browsarify = require('browserify');
 const source = require('vinyl-source-stream');
 const browserSync = require('browser-sync').create();
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 
 function browsarifyTask() {
@@ -26,8 +27,15 @@ function copyLibTask(cb) {
 function runTask(cb) {
     browserSync.init({
         server: {
-            baseDir: "./dist/"
+            baseDir: "./dist/",
+            index: "index.html",
         },
+        middleware: createProxyMiddleware('/api', {
+            target: 'http://rest:8888',
+            pathRewrite: {
+                '^/api': '/'
+            }
+        }),
         open: false
     });
     cb();
