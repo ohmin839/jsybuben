@@ -1,6 +1,7 @@
 const { dest, src, series } = require('gulp');
 const browsarify = require('browserify');
 const source = require('vinyl-source-stream');
+const browserSync = require('browser-sync').create();
 
 
 function browsarifyTask() {
@@ -21,8 +22,19 @@ function copyLibTask(cb) {
     src('node_modules/leaflet/dist/**/*').pipe(dest('dist/lib/leaflet'));
     cb();
 }
+
+function runTask(cb) {
+    browserSync.init({
+        server: {
+            baseDir: "./dist/"
+        },
+        open: false
+    });
+    cb();
+}
   
 exports.default = series(
     browsarifyTask,
-    copyLibTask
+    copyLibTask,
+    runTask
 );

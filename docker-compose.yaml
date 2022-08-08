@@ -4,6 +4,8 @@ services:
     build:
       context: .
       dockerfile: ./docker/core/Dockerfile
+      args:
+        - ARCH=$ARCH
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
   db:
@@ -18,9 +20,8 @@ services:
     build:
       context: .
       dockerfile: ./docker/rest/Dockerfile
-    depends_on:
-      - db
-#      - core
+      args:
+        - ARCH=$ARCH
     ports:
       - 3000:3000
     volumes:
@@ -30,8 +31,12 @@ services:
     build:
       context: .
       dockerfile: ./docker/client/Dockerfile
+      args:
+        - ARCH=$ARCH
 #    depends_on:
 #      - rest
+    ports:
+      - 3000:3000
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
       - ./jsybuben-client:/jsybuben-client:rw
