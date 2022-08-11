@@ -4,7 +4,7 @@
 ## Conversion
 
 ### CLI
-A command to convert text from standard input in ASCII into Aybuben in Unicode.
+`jsybubenconv` is a command to convert text from standard input in ASCII into Aybuben in Unicode.
 
 ```bash
 $ echo 'Barev Dzez:' | npx jsybubenconv
@@ -156,7 +156,7 @@ console.log(result); // Բարև Ձեզ։
 ## Collection 
 
 ### CLI
-A command to list words uniquely from text written in Armenian.
+`jsybubencoll` is a command to list words uniquely from text written in Armenian.
 
 ```bash
 $ cat anthem_ascii.txt | npx jsybubenconv | npx jsybubencoll
