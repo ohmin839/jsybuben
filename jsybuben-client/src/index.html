@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <title>jsybuben</title>
         <link rel="stylesheet" href="./lib/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="./lib/dijit/themes/claro/claro.css" />
         <style>
             #mapArea {
                 height:512px;
@@ -11,7 +12,7 @@
             }
         </style>
     </head>
-    <body>
+    <body class="claro">
         <script src="./dojoConfig.js"></script>
         <script src="./lib/dojo/dojo.js"></script>
         <script>
@@ -36,16 +37,25 @@
                 var lyrOSM = leaflet.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
                 mymap.addLayer(lyrOSM);
             });
+            require(["dojo/parser", "dijit/layout/TabContainer", "dijit/layout/ContentPane"]);
         </script>
-        <div id="conversionArea">
-            <table>
-                <tr>
-                    <td><textarea id="sourceTextArea"></textarea></td>
-                    <td><button id="conversionButton">&gt;&gt;</button></td>
-                    <td><textarea id="targetTextArea"></textarea></td>
-                </tr>
-            </table>
+        <div>
+            <div data-dojo-type="dijit/layout/TabContainer" style="width: 100%;" doLayout="false">
+                <div data-dojo-type="dijit/layout/ContentPane" title="editor" data-dojo-props="selected:true">
+                    <div id="conversionArea">
+                        <table>
+                            <tr>
+                                <td><textarea id="sourceTextArea"></textarea></td>
+                                <td><button id="conversionButton">&gt;&gt;</button></td>
+                                <td><textarea id="targetTextArea"></textarea></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div data-dojo-type="dijit/layout/ContentPane" title="map">
+                    <div id="mapArea"></div>
+                </div>
+            </div>
         </div>
-        <div id="mapArea"></div>
     </body>
 </html>

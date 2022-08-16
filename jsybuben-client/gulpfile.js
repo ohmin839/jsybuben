@@ -20,6 +20,7 @@ function browsarifyTask() {
 function copyLibTask(cb) {
     src('src/*').pipe(dest('dist'));
     src('node_modules/dojo/**/*').pipe(dest('dist/lib/dojo'));
+    src('node_modules/dijit/**/*').pipe(dest('dist/lib/dijit'));
     src('node_modules/leaflet/dist/**/*').pipe(dest('dist/lib/leaflet'));
     cb();
 }
