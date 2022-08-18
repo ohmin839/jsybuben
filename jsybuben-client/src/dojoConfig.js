@@ -5,7 +5,8 @@ dojoConfig = {
         dojo: "dojo",
         dijit: "dijit",
         jsybuben: "jsybuben",
-        leaflet: "leaflet"
+        leaflet: "leaflet",
+        app: "app"
     },
     parseOnLoad: true
 }

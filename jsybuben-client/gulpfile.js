@@ -17,8 +17,10 @@ function browsarifyTask() {
             .pipe(dest('./dist/lib/jsybuben'));
 }
 
-function copyLibTask(cb) {
-    src('src/*').pipe(dest('dist'));
+function copyTask(cb) {
+    src('src/index.html').pipe(dest('dist'));
+    src('src/dojoConfig.js').pipe(dest('dist'));
+    src('src/app/**/*').pipe(dest('dist/lib/app'));
     src('node_modules/dojo/**/*').pipe(dest('dist/lib/dojo'));
     src('node_modules/dijit/**/*').pipe(dest('dist/lib/dijit'));
     src('node_modules/leaflet/dist/**/*').pipe(dest('dist/lib/leaflet'));
@@ -44,6 +46,6 @@ function runTask(cb) {
   
 exports.default = series(
     browsarifyTask,
-    copyLibTask,
+    copyTask,
     runTask
 );
