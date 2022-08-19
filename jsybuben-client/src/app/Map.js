@@ -10,7 +10,7 @@ define([
         templateString: template,
 
         startup: function() {
-            var mymap = leaflet.map('mapArea', {center:[40.159167,44.509167], zoom: 10});
+            var mymap = leaflet.map('mapArea', {center:[40.159167,44.509167], zoom: 8});
             var lyrOSM = leaflet.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
             mymap.addLayer(lyrOSM);
         }

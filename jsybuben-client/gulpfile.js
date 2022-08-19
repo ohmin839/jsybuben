@@ -1,11 +1,11 @@
-const { dest, src, series } = require('gulp');
+const { dest, src, series, watch } = require('gulp');
 const browsarify = require('browserify');
 const source = require('vinyl-source-stream');
 const browserSync = require('browser-sync').create();
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 
-function browsarifyTask() {
+function browsarifyTask(cb) {
     return browsarify(
             '../jsybuben-core/lib/api.js',
             {
@@ -18,16 +18,14 @@ function browsarifyTask() {
 }
 
 function copyTask(cb) {
-    src('src/index.html').pipe(dest('dist'));
-    src('src/dojoConfig.js').pipe(dest('dist'));
+    src(['src/index.html', 'src/dojoConfig.js']).pipe(dest('dist'));
     src('src/app/**/*').pipe(dest('dist/lib/app'));
     src('node_modules/dojo/**/*').pipe(dest('dist/lib/dojo'));
     src('node_modules/dijit/**/*').pipe(dest('dist/lib/dijit'));
-    src('node_modules/leaflet/dist/**/*').pipe(dest('dist/lib/leaflet'));
-    cb();
+    return src('node_modules/leaflet/dist/**/*').pipe(dest('dist/lib/leaflet'));
 }
 
-function runTask(cb) {
+function watchTask(cb) {
     browserSync.init({
         server: {
             baseDir: "./dist/",
@@ -41,11 +39,14 @@ function runTask(cb) {
         }),
         open: false
     });
-    cb();
+    return watch(['src/**/*'], function() {
+        src(['src/index.html', 'src/dojoConfig.js']).pipe(dest('dist'));
+        return src('src/app/**/*').pipe(dest('dist/lib/app'));
+    });
 }
   
 exports.default = series(
     browsarifyTask,
     copyTask,
-    runTask
+    watchTask
 );
