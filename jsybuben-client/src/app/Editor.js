@@ -14,12 +14,33 @@ define([
 
         startup: function() {
             var sourceTextArea = dom.byId("sourceTextArea");
+            var convertedTextArea = dom.byId("convertedTextArea");
+            var wordListArea = dom.byId("wordListArea");
+
             var conversionButton = dom.byId("conversionButton");
-            var targetTextArea = dom.byId("targetTextArea");
+            var collectionButton = dom.byId("collectionButton");
+            var persistenceButton = dom.byId("persistenceButton");
+
+            var statusMessage = dom.byId("statusMessage");
+
             on(conversionButton, "click", function(e) {
                 var sourceText = sourceTextArea.value;
                 var convertedText = jsybuben.to_aybuben(sourceText);
-                targetTextArea.value = convertedText;
+                convertedTextArea.value = convertedText;
+            });
+
+            on(collectionButton, "click", function(e) {
+                var targetText = convertedTextArea.value;
+                var wordSet = jsybuben.to_hayeren_words(targetText);
+                var text = ""
+                for (let word of wordSet) {
+                    text += word + "\n"
+                }
+                wordListArea.value = text;
+            });
+            
+            on(persistenceButton, "click", function(e) {
+                statusMessage.innerHTML = "Not implemented yet."
             });
         }
     });
