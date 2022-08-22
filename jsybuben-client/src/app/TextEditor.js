@@ -2,7 +2,7 @@ define([
     "dojo/_base/declare",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
-    "dojo/text!./templates/Editor.html",
+    "dojo/text!./templates/TextEditor.html",
     "dojo/dom",
     "dojo/on",
     "jsybuben/jsybuben"
