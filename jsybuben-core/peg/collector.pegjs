@@ -2,12 +2,12 @@ start = words
 
 words = vs: (word / anychar)* {
     return vs.filter(function(v) {
-        return v.length > 0;
+        return v;
     });
 }
 
 word = $ [ԱԲԳԴԵԶԷԸԹԺԻԼԽԾԿՀՁՂՃՄՅՆՇՈՉՊՋՌՍՎՏՐՑՒՓՔՕՖՈաբգդեզէըթժիլխծկհձղճմյնշոչպջռսվտրցւփքօֆոև]+
 
 anychar = . {
-   return "";
+   return null;
 }
