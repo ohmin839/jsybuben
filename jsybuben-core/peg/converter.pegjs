@@ -237,8 +237,6 @@ largeZ = "Z" suffix :"h"? {
     }
 }
 
-// FIXME
-
 smallA = "a" {
     return "\u0561";
 }

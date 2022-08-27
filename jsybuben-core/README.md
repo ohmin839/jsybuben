@@ -186,7 +186,7 @@ var word_set = jsybuben.to_hayeren_word_set(converted)
 console.log(word_set); // Set(3) { 'Բարև', 'Ձեզ', 'ձեզ' }
 ```
 
-`to_hayeren_word_dict` is the same as `to_hayeren_word_set` function
+`to_hayeren_word_dict` function is the same as `to_hayeren_word_set`
 except that its return values are dictionaries, not sets.
 ```javascript
 var jsybuben = require('jsybuben-core');
