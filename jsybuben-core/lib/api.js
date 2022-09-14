@@ -1,10 +1,10 @@
-const to_aybuben =  require("./converter").parse
-const to_hayeren_words =  require("./collector").parse
+const toAybuben =  require("./converter").parse
+const toHayerenWords =  require("./collector").parse
 
-function to_hayeren_word_set(text) {
+function toHayerenWordSet(text) {
     var word_set = new Set();
     for (let line of text.split(/\r?\n/)) {
-        var words = to_hayeren_words(line);
+        var words = toHayerenWords(line);
         for (let word of words) {
             word_set.add(word)
         }
@@ -12,10 +12,10 @@ function to_hayeren_word_set(text) {
     return word_set;
 }
 
-function to_hayeren_word_dict(text) {
+function toHayerenWordDict(text) {
     var word_dict = {}
     for (let line of text.split(/\r?\n/)) {
-        var words = to_hayeren_words(line);
+        var words = toHayerenWords(line);
         for (let word of words) {
             if (word_dict[word]) {
                 word_dict[word] += 1
@@ -28,10 +28,10 @@ function to_hayeren_word_dict(text) {
 }
 
 var api = {
-    to_aybuben: to_aybuben,
-    to_hayeren_words: to_hayeren_words,
-    to_hayeren_word_set: to_hayeren_word_set,
-    to_hayeren_word_dict: to_hayeren_word_dict
+    toAybuben: toAybuben,
+    toHayerenWords: toHayerenWords,
+    toHayerenWordSet: toHayerenWordSet,
+    toHayerenWordDict: toHayerenWordDict
 };
 
 module.exports = api;

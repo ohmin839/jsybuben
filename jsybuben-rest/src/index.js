@@ -4,7 +4,7 @@ const app = express()
 const port = 8888
 
 app.get('/', (req, res) => {
-    res.send(jsybuben.to_aybuben('Barev Dzez:'))
+    res.send(jsybuben.toAybuben('Barev Dzez:'))
 })
 
 app.listen(port, () => {

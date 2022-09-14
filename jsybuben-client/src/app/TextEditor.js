@@ -18,14 +18,14 @@ define([
 
         onConversionButtonClicked: function(e) {
             var sourceText = this.sourceTextArea.value;
-            var convertedText = jsybuben.to_aybuben(sourceText);
+            var convertedText = jsybuben.toAybuben(sourceText);
             this.convertedTextArea.value = convertedText;
             this.statusMessage.innerHTML = `Converted into text in Aybuben.`
         },
 
         onCollectionButtonClicked: function(e) {
             var targetText = this.convertedTextArea.value;
-            var wordSet = jsybuben.to_hayeren_word_set(targetText);
+            var wordSet = jsybuben.toHayerenWordSet(targetText);
             var text = ""
             for (let word of wordSet) {
                 text += word + "\n"

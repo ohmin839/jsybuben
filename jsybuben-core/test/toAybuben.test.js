@@ -1,5 +1,5 @@
 const api = require("../lib/api");
-const to_aybuben = api.to_aybuben;
+const toAybuben = api.toAybuben;
 
 test.each([
     ["", ""],
@@ -105,5 +105,5 @@ test.each([
     ["\r\n", "\r\n"],
     ["あ", "あ"],
 ])("from %s to %s", (ascii, unicode) => {
-    expect(to_aybuben(ascii)).toStrictEqual(unicode);
+    expect(toAybuben(ascii)).toStrictEqual(unicode);
 });
