@@ -2,31 +2,46 @@
     <table width="50%">
         <tr>
             <td style="width:90%;padding:5px;">
-                <textarea id="sourceTextArea" rows="10" style="width:100%;"></textarea>
+                <textarea
+                    data-dojo-type="dijit/form/Textarea"
+                    data-dojo-attach-point="sourceTextArea"
+                    rows="10" style="width:100%;"></textarea>
             </td>
             <td style="width:10%;">
-                <button id="conversionButton">&#x21b2;</button>
+                <button
+                    data-dojo-type="dijit/form/Button"
+                    data-dojo-attach-event="click: onConversionButtonClicked">&#x21b2;</button>
             </td>
         </tr>
         <tr>
             <td style="width:90%;padding:5px;">
-                <textarea id="convertedTextArea" rows="10" style="width:100%;"></textarea>
+                <textarea
+                    data-dojo-type="dijit/form/Textarea"
+                    data-dojo-attach-point="convertedTextArea"
+                    rows="10" style="width:100%;"></textarea>
             </td>
             <td style="width:10%;">
-                <button id="collectionButton">&#x21b2;</button>
+                <button
+                    data-dojo-type="dijit/form/Button"
+                    data-dojo-attach-event="click: onCollectionButtonClicked">&#x21b2;</button>
             </td>
         </tr>
         <tr>
             <td style="width:90%;padding:5px;">
-                <textarea id="wordListArea" rows="10" style="width:100%;" readonly="readonly"></textarea>
+                <textarea
+                    data-dojo-type="dijit/form/Textarea"
+                    data-dojo-attach-point="wordListArea"
+                    rows="10" style="width:100%;" readonly="readonly"></textarea>
             </td>
             <td style="width:10%;">
-                <button id="persistenceButton">&#x21b2;</button>
+                <button
+                    data-dojo-type="dijit/form/Button"
+                    data-dojo-attach-event="click: onPersistenceButtonClicked">&#x21b2;</button>
             </td>
         </tr>
         <tr>
             <td style="width:90%;padding:5px;">
-                <div id="statusMessage">This is a text editor.</div>
+                <div data-dojo-attach-point="statusMessage">This is a text editor.</div>
             </td>
             <td style="width:10%;">
             </td>
