@@ -6,6 +6,7 @@ services:
       dockerfile: ./docker/core/Dockerfile
       args:
         - ARCH=$ARCH
+        - NODE_VERSION=$NODE_VERSION
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
   db:
@@ -22,6 +23,7 @@ services:
       dockerfile: ./docker/rest/Dockerfile
       args:
         - ARCH=$ARCH
+        - NODE_VERSION=$NODE_VERSION
     ports:
       - 8888:8888
     volumes:
@@ -33,6 +35,7 @@ services:
       dockerfile: ./docker/client/Dockerfile
       args:
         - ARCH=$ARCH
+        - NODE_VERSION=$NODE_VERSION
     ports:
       - 3000:3000
     volumes:
