@@ -3,11 +3,8 @@ define([
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     "dojo/text!./templates/TextEditor.html",
-    "dojo/dom",
-    "dojo/on",
     "jsybuben/jsybuben"
-], function(declare, _WidgetBase, _TemplatedMixin, template,
-            dom, on, jsybuben)
+], function(declare, _WidgetBase, _TemplatedMixin, template, jsybuben)
 {
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
