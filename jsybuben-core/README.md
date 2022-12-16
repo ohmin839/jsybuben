@@ -33,12 +33,12 @@ $ cat anthem_ascii.txt | npx jsybubenconv
 ```
 
 ### API
-You can also use `to_aybuben` function as API.
+You can also use `toAybuben` function as API.
 
 ```javascript
 var jsybuben = require('jsybuben-core');
 
-var result = jsybuben.to_aybuben('Barev Dzez:');
+var result = jsybuben.toAybuben('Barev Dzez:');
 console.log(result); // Բարև Ձեզ։
 ```
 
@@ -169,30 +169,30 @@ $ cat anthem_ascii.txt | npx jsybubenconv | npx jsybubencoll
 
 ### API
 
-`to_hayeren_words` function extracts Armenian words from texts:
+`toHayerenWords` function extracts Armenian words from texts:
 ```javascript
 var jsybuben = require('jsybuben-core');
-var converted = jsybuben.to_aybuben('Barev Dzez:');
-var words = jsybuben.to_hayeren_words(converted)
+var converted = jsybuben.toAybuben('Barev Dzez:');
+var words = jsybuben.toHayerenWords(converted)
 console.log(words); // [ 'Բարև', 'Ձեզ' ]
 ```
 
-`to_hayeren_word_set` function is the same as `to_hayeren_words`
+`toHayerenWordSet` function is the same as `toHayerenWords`
 except that it extracts words uniquely(case-sensitive).
 ```javascript
 var jsybuben = require('jsybuben-core');
-var converted = jsybuben.to_aybuben('Barev Dzez, Barev dzez:');
-var word_set = jsybuben.to_hayeren_word_set(converted)
-console.log(word_set); // Set(3) { 'Բարև', 'Ձեզ', 'ձեզ' }
+var converted = jsybuben.toAybuben('Barev Dzez, Barev dzez:');
+var wordSet = jsybuben.toHayerenWordSet(converted)
+console.log(wordSet); // Set(3) { 'Բարև', 'Ձեզ', 'ձեզ' }
 ```
 
-`to_hayeren_word_dict` function is the same as `to_hayeren_word_set`
+`toHayerenWordDict` function is the same as `toHayerenWordSet`
 except that its return values are dictionaries, not sets.
 ```javascript
 var jsybuben = require('jsybuben-core');
-var converted = jsybuben.to_aybuben('Barev Dzez, Barev dzez:');
-var word_set = jsybuben.to_hayeren_word_dict(converted)
-console.log(word_set); // { 'Բարև': 2, 'Ձեզ': 1, 'ձեզ': 1 }
+var converted = jsybuben.toAybuben('Barev Dzez, Barev dzez:');
+var wordDict = jsybuben.toHayerenWordDict(converted)
+console.log(wordDict); // { 'Բարև': 2, 'Ձեզ': 1, 'ձեզ': 1 }
 ```
 
 ## External resources
