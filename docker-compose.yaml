@@ -1,31 +1,17 @@
-version: "1"
+version: "3.8"
 services:
   core:
     build:
       context: .
       dockerfile: ./docker/core/Dockerfile
-      args:
-        - ARCH=$ARCH
-        - NODE_VERSION=$NODE_VERSION
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
-  db:
-    image: postgres:14.4-alpine
-    ports:
-      - 5432:5432
-    environment:
-      - POSTGRES_PASSWORD=passw0rd
-    volumes:
-      - ./docker/db/initsql:/docker-entrypoint-initdb.d
   rest:
     build:
       context: .
       dockerfile: ./docker/rest/Dockerfile
-      args:
-        - ARCH=$ARCH
-        - NODE_VERSION=$NODE_VERSION
     ports:
-      - 8888:8888
+      - "8888"
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
       - ./jsybuben-rest:/jsybuben-rest:rw
@@ -33,11 +19,8 @@ services:
     build:
       context: .
       dockerfile: ./docker/client/Dockerfile
-      args:
-        - ARCH=$ARCH
-        - NODE_VERSION=$NODE_VERSION
     ports:
-      - 3000:3000
+      - "3000"
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
       - ./jsybuben-client:/jsybuben-client:rw
