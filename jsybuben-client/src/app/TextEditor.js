@@ -17,29 +17,29 @@ define([
             var sourceText = this.sourceTextArea.value;
             var convertedText = jsybuben.toAybuben(sourceText);
             this.convertedTextArea.value = convertedText;
-            this.statusMessage.innerHTML = `Converted into text in Aybuben.`
+            this.statusMessage.innerHTML = `Converted into text in Aybuben.`;
         },
 
         onCollectionButtonClicked: function(e) {
             var targetText = this.convertedTextArea.value;
             var wordSet = jsybuben.toHayerenWordSet(targetText);
-            var text = ""
+            var text = "";
             for (let word of wordSet) {
-                text += word + "\n"
+                text += word + "\n";
             }
             this.wordListArea.value = text;
             var count = wordSet.size;
             if (count == 0) {
-                this.statusMessage.innerHTML = `No Hayeren words extracted.`
+                this.statusMessage.innerHTML = `No Hayeren words extracted.`;
             } else if (count == 1) {
-                this.statusMessage.innerHTML = `1 Hayeren word extracted.`
+                this.statusMessage.innerHTML = `1 Hayeren word extracted.`;
             } else {
-                this.statusMessage.innerHTML = `${count} Hayeren words extracted.`
+                this.statusMessage.innerHTML = `${count} Hayeren words extracted.`;
             }
         },
 
         onPersistenceButtonClicked: function(e) {
-            this.statusMessage.innerHTML = "Persistence not implemented yet."
+            this.statusMessage.innerHTML = "Persistence not implemented yet.";
         }
     });
 });

@@ -9,4 +9,4 @@ dojoConfig = {
         app: "app"
     },
     parseOnLoad: true
-}
+};
