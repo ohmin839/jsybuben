@@ -24,3 +24,25 @@ services:
     volumes:
       - ./jsybuben-core:/jsybuben-core:rw
       - ./jsybuben-client:/jsybuben-client:rw
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    volumes:
+      - ./data/db:/data/db
+      - ./data/configdb/:/data/configdb
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - "8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_USERNAME}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_PASSWORD}
+      ME_CONFIG_MONGODB_SERVER: mongo
+    depends_on:
+      - mongo
