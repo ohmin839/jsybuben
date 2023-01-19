@@ -8,8 +8,8 @@
     "jsybubencoll": "bin/jsybubencoll"
   },
   "scripts": {
-    "genconv": "pegjs -o lib/converter.js peg/converter.pegjs",
-    "gencoll": "pegjs -o lib/collector.js peg/collector.pegjs",
+    "genconv": "peggy -o lib/converter.js peg/converter.pegjs",
+    "gencoll": "peggy -o lib/collector.js peg/collector.pegjs",
     "pretest": "npm run genconv & npm run gencoll",
     "test": "jest --verbose test"
   },
@@ -25,6 +25,6 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^28.1.3",
-    "pegjs": "^0.10.0"
+    "peggy": "^2.0.1"
   }
 }
