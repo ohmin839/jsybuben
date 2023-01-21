@@ -1,42 +1,12 @@
-# jsybuben-core
-`jsybuben-core` provides some CLIs and APIs.
+# jsybuben-api
+`jsybuben-api` provides minimum APIs.
 
-## Conversion
+## Conversion API
 
-### CLI
-`jsybubenconv` is a command to convert text from standard input in ASCII into Aybuben in Unicode.
-
-```bash
-$ echo 'Barev Dzez:' | npx jsybubenconv
-Բարև Ձեզ։
-
-$ cat anthem_ascii.txt | npx jsybubenconv
-Մեր Հայրենիք, ազատ անկախ,
-Որ ապրել է դարեդար
-Յուր որդիքյ արդ կանչում են
-Ազատ, անկախ Հայաստան։
-
-Ահա եգբայր քեզ մի դրոշ,
-Որ իմ ձեռքով գործեցի
-Գիշերներյ ես քուն չեգայ,
-Արզասուքով լվացի։
-
-Նայիր նրան՝ երեք գոյնով,
-Նուիրական մեր նսջան
-Թոգ փեգփոգի թշնամու դեմ
-Թոգ միսպտ պանծայ Հայաստան։
-
-Ամենայն տեգ մահը մի է
-Մարդ մի անգամ պիտ մեռնի,
-Բայց երանի՝ որ յուր ազգի
-Ազատության կզոհվի։
-```
-
-### API
-You can also use `toAybuben` function as API.
+`toAybuben` function converts ASCII strings into Aybuben strings.
 
 ```javascript
-var jsybuben = require('jsybuben-core');
+var jsybuben = require('jsybuben-api');
 
 var result = jsybuben.toAybuben('Barev Dzez:');
 console.log(result); // Բարև Ձեզ։
@@ -153,25 +123,11 @@ console.log(result); // Բարև Ձեզ։
 | `\n` | `\n` |
 | `\r\n` | `\r\n` |
 
-## Collection 
-
-### CLI
-`jsybubencoll` is a command to list words uniquely from text written in Armenian.
-
-```bash
-$ cat anthem_ascii.txt | npx jsybubenconv | npx jsybubencoll
-Մեր
-Հայրենիք
-ազատ
-անկախ
-...
-```
-
-### API
+## Collection API
 
 `toHayerenWords` function extracts Armenian words from texts:
 ```javascript
-var jsybuben = require('jsybuben-core');
+var jsybuben = require('jsybuben-api');
 var converted = jsybuben.toAybuben('Barev Dzez:');
 var words = jsybuben.toHayerenWords(converted)
 console.log(words); // [ 'Բարև', 'Ձեզ' ]
@@ -180,7 +136,7 @@ console.log(words); // [ 'Բարև', 'Ձեզ' ]
 `toHayerenWordSet` function is the same as `toHayerenWords`
 except that it extracts words uniquely(case-sensitive).
 ```javascript
-var jsybuben = require('jsybuben-core');
+var jsybuben = require('jsybuben-api');
 var converted = jsybuben.toAybuben('Barev Dzez, Barev dzez:');
 var wordSet = jsybuben.toHayerenWordSet(converted)
 console.log(wordSet); // Set(3) { 'Բարև', 'Ձեզ', 'ձեզ' }
@@ -189,7 +145,7 @@ console.log(wordSet); // Set(3) { 'Բարև', 'Ձեզ', 'ձեզ' }
 `toHayerenWordDict` function is the same as `toHayerenWordSet`
 except that its return values are dictionaries, not sets.
 ```javascript
-var jsybuben = require('jsybuben-core');
+var jsybuben = require('jsybuben-api');
 var converted = jsybuben.toAybuben('Barev Dzez, Barev dzez:');
 var wordDict = jsybuben.toHayerenWordDict(converted)
 console.log(wordDict); // { 'Բարև': 2, 'Ձեզ': 1, 'ձեզ': 1 }

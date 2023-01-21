@@ -1,0 +1,23 @@
+{
+  "name": "jsybuben-cli",
+  "version": "0.1.0",
+  "description": "A tiny tool for editing text in Armenian alphabet(Aybuben)",
+  "main": "index.js",
+  "bin": {
+    "jsybubenconv": "bin/jsybubenconv",
+    "jsybubencoll": "bin/jsybubencoll"
+  },
+  "dependencies": {
+    "jsybuben-api": "file:../jsybuben-api"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ohmin839",
+  "files": [
+    "bin/jsybubenconv",
+    "bin/jsybubencoll",
+    "package.json"
+  ],
+  "license": "ISC"
+}

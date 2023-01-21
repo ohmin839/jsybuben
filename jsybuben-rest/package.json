@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1",
-    "jsybuben-core": "file:../jsybuben-core"
+    "jsybuben-core": "file:../jsybuben-api"
   }
 }

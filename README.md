@@ -3,6 +3,7 @@
 This is a work on progress.
 
 ## Components
-- [`jsybuben-core`](./jsybuben-core/README.md)
+- [`jsybuben-api`](./jsybuben-api/README.md)
+- [`jsybuben-cli`](./jsybuben-cli/README.md)
 - `jsybuben-client`
 - `jsybuben-rest`
