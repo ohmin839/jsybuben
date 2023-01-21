@@ -1,11 +1,18 @@
 version: "3.8"
 services:
-  core:
+  api:
     build:
       context: .
-      dockerfile: ./docker/core/Dockerfile
+      dockerfile: ./docker/api/Dockerfile
     volumes:
-      - ./jsybuben-core:/jsybuben-core:rw
+      - ./jsybuben-api:/jsybuben-api:rw
+  cli:
+    build:
+      context: .
+      dockerfile: ./docker/cli/Dockerfile
+    volumes:
+      - ./jsybuben-api:/jsybuben-api:rw
+      - ./jsybuben-cli:/jsybuben-cli:rw
   rest:
     build:
       context: .
@@ -13,7 +20,7 @@ services:
     ports:
       - "8888"
     volumes:
-      - ./jsybuben-core:/jsybuben-core:rw
+      - ./jsybuben-api:/jsybuben-api:rw
       - ./jsybuben-rest:/jsybuben-rest:rw
   client:
     build:
@@ -22,7 +29,7 @@ services:
     ports:
       - "3000"
     volumes:
-      - ./jsybuben-core:/jsybuben-core:rw
+      - ./jsybuben-api:/jsybuben-api:rw
       - ./jsybuben-client:/jsybuben-client:rw
   mongo:
     image: mongo

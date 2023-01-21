@@ -7,7 +7,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 function browsarifyTask(cb) {
     return browsarify(
-            '../jsybuben-core/lib/api.js',
+            '../jsybuben-api/lib/api.js',
             {
                 outfile: "jsybuben.js",
                 standalone: "jsybuben"
