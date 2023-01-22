@@ -1,17 +1,15 @@
 define([
     "dojo/_base/declare",
+    "dojo/_base/lang",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     "dojo/text!./templates/TextEditor.html",
+    "dojo/request",
     "jsybuben/jsybuben"
-], function(declare, _WidgetBase, _TemplatedMixin, template, jsybuben)
+], function(declare, lang, _WidgetBase, _TemplatedMixin, template, request, jsybuben)
 {
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
-
-        startup: function() {
-            // DO NOTHING
-        },
 
         onConversionButtonClicked: function(e) {
             var sourceText = this.sourceTextArea.value;
@@ -39,7 +37,16 @@ define([
         },
 
         onPersistenceButtonClicked: function(e) {
-            this.statusMessage.innerHTML = "Persistence not implemented yet.";
+            request.post("/rest/rawText", {
+                data: this.convertedTextArea
+            }).then(
+                lang.hitch(this, function(response) {
+                    this.statusMessage.innerHTML = "Persistence succeeded.";
+                }),
+                lang.hitch(this, function(error) {
+                    this.statusMessage.innerHTML = "Persistence failed.";
+                })
+            );
         }
     });
 });

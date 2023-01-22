@@ -13,6 +13,7 @@ services:
     volumes:
       - ./jsybuben-api:/jsybuben-api:rw
       - ./jsybuben-cli:/jsybuben-cli:rw
+      - ./jsybuben-mongodb:/jsybuben-mongodb:rw
   rest:
     build:
       context: .
@@ -22,6 +23,7 @@ services:
     volumes:
       - ./jsybuben-api:/jsybuben-api:rw
       - ./jsybuben-rest:/jsybuben-rest:rw
+      - ./jsybuben-mongodb:/jsybuben-mongodb:rw
   client:
     build:
       context: .

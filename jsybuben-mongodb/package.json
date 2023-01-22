@@ -1,21 +1,14 @@
 {
-  "name": "jsybuben-server",
+  "name": "jsybuben-mongodb",
   "version": "0.1.0",
   "description": "A tiny tool for editing text in Armenian alphabet(Aybuben)",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ohmin839",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1",
-    "jsybuben-api": "file:../jsybuben-api",
-    "jsybuben-mongodb": "file:../jsybuben-mongodb",
     "mongoose": "^6.8.4"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
   }
 }

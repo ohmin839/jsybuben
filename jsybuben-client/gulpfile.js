@@ -31,10 +31,10 @@ function watchTask(cb) {
             baseDir: "./dist/",
             index: "index.html",
         },
-        middleware: createProxyMiddleware('/api', {
+        middleware: createProxyMiddleware('/rest', {
             target: 'http://rest:8888',
             pathRewrite: {
-                '^/api': '/'
+                '^/rest': '/'
             }
         }),
         open: false
